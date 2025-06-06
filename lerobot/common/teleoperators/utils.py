@@ -41,6 +41,10 @@ def make_teleoperator_from_config(config: TeleoperatorConfig) -> Teleoperator:
         from .widowx import WidowX
 
         return WidowX(config)
+    elif config.type == "roarm_m2_leader":
+        from .roarm_m2_leader import RoArmM2Leader
+
+        return RoArmM2Leader(config)
     elif config.type == "mock_teleop":
         from tests.mocks.mock_teleop import MockTeleop
 
